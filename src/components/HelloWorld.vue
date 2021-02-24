@@ -1,4 +1,4 @@
-<template>
+<template>     <!--公共资源的组件-->
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
