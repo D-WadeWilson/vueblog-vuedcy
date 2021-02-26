@@ -1,5 +1,6 @@
-<template> <!--template下只能有一个标签-->
+<template>
   <div>
+
     <el-container>
       <el-header>
         <img class="mlogo" src="https://www.markerhub.com/dist/images/logo/markerhub-logo.png" alt="">
@@ -21,6 +22,7 @@
 
       </el-main>
     </el-container>
+
   </div>
 </template>
 
@@ -49,7 +51,7 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           const _this = this
-          this.$axios.post('/login', this.ruleForm).then(res => {     //相当于ajax请求
+          this.$axios.post('/login', this.ruleForm).then(res => {
 
             console.log(res.data)
             const jwt = res.headers['authorization']
@@ -79,47 +81,48 @@ export default {
 </script>
 
 <style scoped>
-  .el-header, .el-footer {
-    background-color: #B3C0D1;
-    color: #333;
-    text-align: center;
-    line-height: 60px;
-  }
+.el-header, .el-footer {
+  background-color: #B3C0D1;
+  color: #333;
+  text-align: center;
+  line-height: 60px;
+}
 
-  .el-aside {
-    background-color: #D3DCE6;
-    color: #333;
-    text-align: center;
-    line-height: 200px;
-  }
+.el-aside {
+  background-color: #D3DCE6;
+  color: #333;
+  text-align: center;
+  line-height: 200px;
+}
 
-  .el-main {
-    /*background-color: #E9EEF3;*/
-    color: #333;
-    text-align: center;
-    line-height: 160px;
-  }
+.el-main {
+  /*background-color: #E9EEF3;*/
+  color: #333;
+  text-align: center;
+  line-height: 160px;
+}
 
-  body > .el-container {
-    margin-bottom: 40px;
-  }
+body > .el-container {
+  margin-bottom: 40px;
+}
 
-  .el-container:nth-child(5) .el-aside,
-  .el-container:nth-child(6) .el-aside {
-    line-height: 260px;
-  }
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+  line-height: 260px;
+}
 
-  .el-container:nth-child(7) .el-aside {
-    line-height: 320px;
-  }
+.el-container:nth-child(7) .el-aside {
+  line-height: 320px;
+}
 
-  .mlogo {
-    height: 60%;
-    margin-top: 10px;
-  }
+.mlogo {
+  height: 60%;
+  margin-top: 10px;
+}
 
-  .demo-ruleForm {
-    max-width: 500px;
-    margin: 0 auto;
-  }
+.demo-ruleForm {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
 </style>

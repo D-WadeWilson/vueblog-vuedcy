@@ -6,7 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     token:"",
-    userinfo:{}
+    userinfo:JSON.parse(sessionStorage.getItem("userInfo"))
   },
   mutations: {     //相当于bean里的set方法
     SET_TOKEN: (state, token) =>{
@@ -16,11 +16,23 @@ export default new Vuex.Store({
     SET_USERINFO:(state,userInfo )=>{
       state.userInfo = userInfo
       sessionStorage.setItem("userInfo",JSON.stringify(userInfo))
+    },
+    REMOVE_INFO:(state) =>{
+      state.token = ''
+      state.userinfo = {}
+      localStorage.setItem("userInfo",JSON.stringify(""));
     }
 
 
+
+  },
+  getters:{   //get
+    getUser:state => {
+      return state.userinfo
+    }
   },
   actions: {
+
   },
   modules: {
   }

@@ -1,10 +1,14 @@
 <template>
-
+  <div>
+    blogs
+  </div>
 </template>
 
 <script>
+import Header from "../components/Header";
 export default {
-  name: "Blogs"
+  name: "Blogs.vue",
+  components:{Header}
 }
 </script>
 
